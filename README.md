@@ -17,9 +17,10 @@ preamble. See the "Paper format" section below for details.**
     `\AtBeginDocument{\settopmatter{printacmref=true}}`. The current setup does
     not use `nonacm`, so the ACM reference format and branding are included by
     default, and the `printacmref` override is not needed.
-- **Conference footer**: A custom footer showing the conference short name,
-  date, and location (`FAccT '26, June 25--28, 2026, Montréal, Canada.`)
-  appears at the bottom of every page.
+- **Conference footer**: A footer showing the conference name,
+  date, and location (`ACM Conference on Fairness, Accountability, and
+  Transparency, June 25--28, 2026, Montréal, Canada.`) appears at the
+  bottom of every page.
 - **Makefile** and **.gitignore** added for convenient compilation and
   cleanup (if compiling locally).
 
@@ -37,13 +38,13 @@ in **single-column format**, along with the ACM reference format and branding:
     \fancyhf{}
     \fancyhead[RO,LE]{\thepage}
     \fancyfoot[RO,LE]{\footnotesize
-      \myconfshort, \myconfdate, \myconfloc.
+      \myconffull, \myconfdate, \myconfloc.
     }
   }
 
   % Other pages
   \fancyfoot[RO,LE]{\footnotesize
-    \myconfshort, \myconfdate, \myconfloc.
+    \myconffull, \myconfdate, \myconfloc.
   }
 }
 \makeatletter
