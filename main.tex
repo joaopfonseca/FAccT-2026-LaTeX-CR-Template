@@ -46,10 +46,10 @@
 %%
 \documentclass[acmlarge]{acmart}
 \makeatletter
-\newcommand{\myconfshort}{\acmConference@shortname}
-\newcommand{\myconffull}{\acmConference@name}
-\newcommand{\myconfdate}{\acmConference@date}
-\newcommand{\myconfloc}{\acmConference@venue}
+\newcommand{\confshort}{\acmConference@shortname}
+\newcommand{\conffull}{\acmConference@name}
+\newcommand{\confdate}{\acmConference@date}
+\newcommand{\confloc}{\acmConference@venue}
 \AtBeginDocument{
   \fancypagestyle{firstpagestyle}{
     \fancyhead{}%
@@ -58,11 +58,12 @@
   \fancyhf{}
   \fancyhead[LO]{\@headfootfont\shorttitle}%
   \fancyhead[RE]{\@headfootfont\@shortauthors}%
-  \fancyhead[LE]{\@headfootfont\footnotesize \myconfshort, \myconfdate, \myconfloc}%
-  \fancyhead[RO]{\@headfootfont\footnotesize \myconfshort, \myconfdate, \myconfloc}%
+  \fancyhead[LE]{\@headfootfont\footnotesize \confshort, \confdate, \confloc}%
+  \fancyhead[RO]{\@headfootfont\footnotesize \confshort, \confdate, \confloc}%
   \fancyfoot[C]{}%
 }
 \makeatother
+\acmBooktitle{\conffull\@ (\confshort), \confdate, \confloc}
 
 
 
@@ -81,7 +82,8 @@
 \acmYear{2026}
 \acmDOI{XXXXXXX.XXXXXXX}
 %% These commands are for a PROCEEDINGS abstract or paper.
-\acmConference[FAccT '26]{ACM Conference on Fairness, Accountability, and Transparency}{June 25--28, 2026}{Montr\'eal, Canada}
+\acmConference[FAccT '26]{The 2026 ACM Conference on Fairness, Accountability, and Transparency}{June 25--28, 2026}{Montr\'eal, Canada}
+
 %%
 %%  Uncomment \acmBooktitle if the title of the proceedings is different
 %%  from ``Proceedings of ...''!

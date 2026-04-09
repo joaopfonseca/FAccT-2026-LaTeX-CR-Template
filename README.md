@@ -33,10 +33,10 @@ in **single-column format**, along with the ACM reference format and branding:
 ```latex
 \documentclass[acmlarge]{acmart}
 \makeatletter
-\newcommand{\myconfshort}{\acmConference@shortname}
-\newcommand{\myconffull}{\acmConference@name}
-\newcommand{\myconfdate}{\acmConference@date}
-\newcommand{\myconfloc}{\acmConference@venue}
+\newcommand{\confshort}{\acmConference@shortname}
+\newcommand{\conffull}{\acmConference@name}
+\newcommand{\confdate}{\acmConference@date}
+\newcommand{\confloc}{\acmConference@venue}
 \AtBeginDocument{
   \fancypagestyle{firstpagestyle}{
     \fancyhead{}%
@@ -45,11 +45,12 @@ in **single-column format**, along with the ACM reference format and branding:
   \fancyhf{}
   \fancyhead[LO]{\@headfootfont\shorttitle}%
   \fancyhead[RE]{\@headfootfont\@shortauthors}%
-  \fancyhead[LE]{\@headfootfont\footnotesize \myconfshort, \myconfdate, \myconfloc}%
-  \fancyhead[RO]{\@headfootfont\footnotesize \myconfshort, \myconfdate, \myconfloc}%
+  \fancyhead[LE]{\@headfootfont\footnotesize \confshort, \confdate, \confloc}%
+  \fancyhead[RO]{\@headfootfont\footnotesize \confshort, \confdate, \confloc}%
   \fancyfoot[C]{}%
 }
 \makeatother
+\acmBooktitle{\conffull\@ (\confshort), \confdate, \confloc}
 ```
 
 ## Paper length
