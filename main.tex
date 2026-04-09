@@ -46,27 +46,20 @@
 %%
 \documentclass[acmlarge]{acmart}
 \AtBeginDocument{
-  % First page
   \fancypagestyle{firstpagestyle}{
     \fancyhf{}
     \fancyhead[RO,LE]{\thepage}
-    \fancyfoot[RO,LE]{\footnotesize
-      \myconfshort, \myconfdate, \myconfloc.
-    }
+    \fancyfoot[RO,LE]{\footnotesize \myconfshort, \myconfdate, \myconfloc.}
   }
-
-  % Other pages
-  \fancyfoot[RO,LE]{\footnotesize
-    \myconfshort, \myconfdate, \myconfloc.
-  }
+  \fancyfoot[RO,LE]{\footnotesize \myconfshort, \myconfdate, \myconfloc.}
 }
+\makeatletter
+\newcommand{\myconfshort}{\acmConference@shortname}
+\newcommand{\myconffull}{\acmConference@name}
+\newcommand{\myconfdate}{\acmConference@date}
+\newcommand{\myconfloc}{\acmConference@venue}
+\makeatother
 
-% \AtBeginDocument{\settopmatter{printacmref=true, printfolios=true}}
-% \AtBeginDocument{\settopmatter{printccs=true}}
-% \AtBeginDocument{\SelectFootnoteRule{copyrightpermission}}
-% \DeclareNewFootnote{authorsaddresses}
-% \SelectFootnoteRule[2]{copyrightpermission}
-% \AtBeginDocument{\DeclareNewFootnote{copyrightpermission}}
 
 
 %% \BibTeX command to typeset BibTeX logo in the docs
@@ -84,9 +77,9 @@
 \acmYear{2026}
 \acmDOI{XXXXXXX.XXXXXXX}
 %% These commands are for a PROCEEDINGS abstract or paper.
-\acmConference[Conference acronym 'XX]{Make sure to enter the correct
-  conference title from your rights confirmation email}{June 03--05,
-  2018}{Woodstock, NY}
+\acmConference[FAccT '26]{
+  ACM Conference on Fairness, Accountability, and Transparency
+}{June 25--28, 2026}{Montr\'eal, Canada}
 %%
 %%  Uncomment \acmBooktitle if the title of the proceedings is different
 %%  from ``Proceedings of ...''!
@@ -94,13 +87,6 @@
 %%\acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
 %%  June 03--05, 2018, Woodstock, NY}
 \acmISBN{978-1-4503-XXXX-X/2018/06}
-
-\makeatletter
-\newcommand{\myconfshort}{\acmConference@shortname}
-\newcommand{\myconffull}{\acmConference@name}
-\newcommand{\myconfdate}{\acmConference@date}
-\newcommand{\myconfloc}{\acmConference@venue}
-\makeatother
 
 %%
 %% Submission ID.
