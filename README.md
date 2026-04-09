@@ -17,10 +17,10 @@ preamble. See the "Paper format" section below for details.**
     `\AtBeginDocument{\settopmatter{printacmref=true}}`. The current setup does
     not use `nonacm`, so the ACM reference format and branding are included by
     default, and the `printacmref` override is not needed.
-- **Conference footer**: A footer showing the conference name,
-  date, and location (`ACM Conference on Fairness, Accountability, and
-  Transparency, June 25--28, 2026, Montréal, Canada.`) appears at the
-  bottom of every page.
+- **Conference header**: Headers on even/odd pages show the conference
+  short name, date, and location (`FAccT '26, June 25--28, 2026,
+  Montréal, Canada`) along with the short title and short authors.
+  The first page uses a simplified header/footer style.
 - **Makefile** and **.gitignore** added for convenient compilation and
   cleanup (if compiling locally).
 
@@ -32,26 +32,23 @@ in **single-column format**, along with the ACM reference format and branding:
 
 ```latex
 \documentclass[acmlarge]{acmart}
-\AtBeginDocument{
-  % First page
-  \fancypagestyle{firstpagestyle}{
-    \fancyhf{}
-    \fancyhead[RO,LE]{\thepage}
-    \fancyfoot[RO,LE]{\footnotesize
-      \myconffull, \myconfdate, \myconfloc.
-    }
-  }
-
-  % Other pages
-  \fancyfoot[RO,LE]{\footnotesize
-    \myconffull, \myconfdate, \myconfloc.
-  }
-}
 \makeatletter
 \newcommand{\myconfshort}{\acmConference@shortname}
 \newcommand{\myconffull}{\acmConference@name}
 \newcommand{\myconfdate}{\acmConference@date}
 \newcommand{\myconfloc}{\acmConference@venue}
+\AtBeginDocument{
+  \fancypagestyle{firstpagestyle}{
+    \fancyhead{}%
+    \fancyfoot[C]{}%
+  }
+  \fancyhf{}
+  \fancyhead[LO]{\@headfootfont\shorttitle}%
+  \fancyhead[RE]{\@headfootfont\@shortauthors}%
+  \fancyhead[LE]{\@headfootfont\footnotesize \myconfshort, \myconfdate, \myconfloc}%
+  \fancyhead[RO]{\@headfootfont\footnotesize \myconfshort, \myconfdate, \myconfloc}%
+  \fancyfoot[C]{}%
+}
 \makeatother
 ```
 
