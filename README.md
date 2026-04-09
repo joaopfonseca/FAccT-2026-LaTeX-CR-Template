@@ -1,16 +1,22 @@
 # FAccT '26 Camera-Ready Paper Template
 
-This is a modified ACM template for preparing camera-ready papers for the
+This is an ACM template for preparing camera-ready papers for the
 ACM Conference on Fairness, Accountability, and Transparency (FAccT '26).
+The `acmart.cls` file is included in this repository, but it is exactly the
+same as the one available from the ACM website. You don't need to modify or
+replace it if you already have it in your source files; just use it as is.
+
+**NOTE: The only important change from the original ACM template is in the
+preamble. See the "Paper format" section below for details.**
 
 ## Modifications from the original ACM template
 
 - **Document class**: `\documentclass[acmlarge]{acmart}` — single-column format.
-  Note: this differs from the previously communicated
-  `\documentclass[acmlarge, nonacm]{acmart}` with
-  `\AtBeginDocument{\settopmatter{printacmref=true}}`. The current setup
-  does not use `nonacm`, so the ACM reference format and branding are
-  included by default, and the `printacmref` override is not needed.
+  - **Note:** this differs from the previously communicated
+    `\documentclass[acmlarge, nonacm]{acmart}` with
+    `\AtBeginDocument{\settopmatter{printacmref=true}}`. The current setup does
+    not use `nonacm`, so the ACM reference format and branding are included by
+    default, and the `printacmref` override is not needed.
 - **Conference footer**: A custom footer showing the conference short name,
   date, and location (`FAccT '26, June 25--28, 2026, Montréal, Canada.`)
   appears at the bottom of every page.
@@ -67,10 +73,3 @@ make clean    # Remove auxiliary files (keeps .pdf, .tex, .bib, .cls)
 The build runs `pdflatex` → `bibtex` → `pdflatex` × 2 in nonstop mode to
 resolve all references and bibliography.
 
-## Further reading
-
-- [Preparing your article with LaTeX](https://authors.acm.org/proceedings/production-information/preparing-your-article-with-latex)
-- [Preparing your article with Microsoft Word](https://authors.acm.org/proceedings/production-information/preparing-your-article-with-microsoft-word)
-
-For technical difficulties (LaTeX or Word), ACM's production vendor has 24/7
-support at acmtexsupport@aptaracorp.com.
