@@ -4,10 +4,10 @@ BIB = sample-base
 .PHONY: $(TEX).pdf clean
 
 $(TEX).pdf: $(TEX).tex $(BIB).bib acmart.cls
-	rm -f $(TEX).pdf
-	pdflatex -interaction=nonstopmode $(TEX)
-	bibtex $(TEX)
-	pdflatex -interaction=nonstopmode $(TEX)
+	-rm -f $(TEX).pdf
+	-pdflatex -interaction=nonstopmode $(TEX)
+	-bibtex $(TEX)
+	-pdflatex -interaction=nonstopmode $(TEX)
 	pdflatex -interaction=nonstopmode $(TEX)
 
 clean:
