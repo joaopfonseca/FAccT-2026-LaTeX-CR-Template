@@ -53,6 +53,24 @@ in **single-column format**, along with the ACM reference format and branding:
 \acmBooktitle{\conffull\@ (\confshort), \confdate, \confloc}
 ```
 
+Upon completing the eRights form, the corresponding author will receive a
+confirmation email from ACM (rightsreview@acm.org). The confirmation email will
+contain the ACM copyright-permission block text, publication info, conference
+date/location, and DOI string/URL specific to your paper. Follow the
+instructions in the email to add this information to your paper. For example in
+LaTeX (if you selected a Creative Commons (cc) license):
+
+```
+\copyrightyear{2026}
+\acmYear{2026}
+\setcopyright{cc}
+\setcctype{by}
+\acmConference[FAccT '26]{The 2026 ACM Conference on Fairness, Accountability, and Transparency}{June 25--28, 2026}{Montreal, QC, Canada}
+\acmBooktitle{The 2026 ACM Conference on Fairness, Accountability, and Transparency (FAccT '26), June 25--28, 2026, Montreal, QC, Canada}
+\acmDOI{XXXXX}
+\acmISBN{XXXXX}
+```
+
 ## Paper length
 
 - The paper body has a length limit of **15 pages** (camera-ready papers are
